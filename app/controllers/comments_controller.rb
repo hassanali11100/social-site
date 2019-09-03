@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
     end
 
     def create
-        @comment = @post.comments.new({content: 'hassan comment', username: 'hassan'})
+        @comment = @post.comments.new(comment_params)
         if @comment.save
             flash[:success] = "Comment Added Successfully"
             redirect_to @post
