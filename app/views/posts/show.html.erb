@@ -18,8 +18,16 @@
 <% @post.comments.each do |comment| %>
     <strong>Content:</strong>
     <%= comment.content %> |
-    <strong>Username:</strong>
-    <%= comment.username %>
+    <strong>Username:</strong> 
+    <%= comment.username %> |
+    <%= link_to like_post_comment_path(@post, comment), method: :patch do %> 
+      <i class="fa fa-thumbs-o-up"></i>
+    <% end %>
+    <br>
+    <% if comment.like_count.present? %>
+      <%= comment.like_count %> people liked this comment
+    <% end %>
+    <br>
 <% end %>
 
 <br>
