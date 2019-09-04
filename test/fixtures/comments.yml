@@ -3,7 +3,9 @@
 one:
   content: MyText
   username: MyString
+  like_count: 0
 
 two:
   content: MyText
   username: MyString
+  like_count: 0
